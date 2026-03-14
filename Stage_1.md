@@ -9,7 +9,7 @@ During the initial brainstorming sessions, we analyzed several project concepts,
 | **Mapping Beauty** | Innovative visual concept. | High latency risks due to heavy reliance on external map APIs. | **Rejected:** Creating a custom GIS-based archive would consume too much infrastructure time over features. |
 | **Color Analysis** | High personalization potential. | Requires complex Machine Learning (ML) models for skin-tone accuracy. | **Rejected:** Technical risk in algorithm accuracy might compromise product stability for an MVP. |
 | **Location-Based Reminder** | Solves a daily productivity problem. | High market saturation with many existing large-scale competitors. | **Rejected:** Our goal was to build a niche B2B solution with unique relational data challenges. |
-| **Artura (Palette Hub)** | **Professional B2B bridge for creative industries.** | Requires advanced filtering and dynamic state management. | **Selected:** Addresses a critical "communication gap" using a sophisticated Relational Data Architecture. |
+| **Artura** | **Professional B2B bridge for creative industries.** | Requires advanced filtering and dynamic state management. | **Selected:** Addresses a critical "communication gap" using a sophisticated Relational Data Architecture. |
 
 ---
 
