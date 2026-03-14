@@ -27,3 +27,29 @@ The creative and real estate industries currently suffer from **"Discovery Fragm
 
 ### 🌟 Potential Impact
 **Artura** formalizes the art acquisition process, transforming it from a fragmented, manual task into a streamlined digital workflow. This saves corporate firms hundreds of hours in manual sourcing while providing artists with the professional visibility they deserve.
+
+## 2. Architecture & Design Diagrams
+
+### 2.1 Use Case Diagram
+This diagram illustrates the core interactions within the B2B ecosystem, focusing on the "Customization Request" flow which is our unique value proposition.
+
+```mermaid
+useCaseDiagram
+    actor "Artist (Provider)" as Artist
+    actor "Design Office (Buyer)" as Designer
+    actor "System Admin" as Admin
+
+    package "Artura System" {
+        usecase "Upload & Manage Portfolio" as UC1
+        usecase "Browse with Visual Filters" as UC2
+        usecase "Request Customization" as UC3
+        usecase "Manage Quotes & Orders" as UC4
+        usecase "Content Moderation" as UC5
+    }
+
+    Artist --> UC1
+    Artist --> UC4
+    Designer --> UC2
+    Designer --> UC3
+    Designer --> UC4
+    Admin --> UC5
