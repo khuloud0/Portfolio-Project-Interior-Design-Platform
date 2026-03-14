@@ -78,7 +78,7 @@ The team has selected a modern and scalable technical stack to ensure the perfor
 ### 🗄 Persistence & Data 
 * **Database:** PostgreSQL (Relational Database)
 * **ORM:** SQLAlchemy (for efficient database interactions)
-* **Modeling:** Draw.io / MySQL Workbench (for ERD design)
+* **Modeling:** mermaid / MySQL Workbench (for ERD design)
 
 ### 🎨 Frontend & Design
 * **Languages:** HTML5, CSS3, JavaScript
