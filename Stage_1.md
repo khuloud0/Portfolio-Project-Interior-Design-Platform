@@ -49,22 +49,25 @@ To ensure long-term sustainability and scalability, **Palette Hub** follows a st
 
 ---
 
-### 🗺️ Visual Roadmap (Mermaid)
+### 🗺️ Visual Roadmap
 
 ```mermaid
-timeline
-    title Palette Hub Strategic Roadmap
-    section Phase 1: MVP (Current)
-        B2B Focus : Interior Design & Real Estate
-        Physical Crafts : Paintings & Woodwork
-        Core Logic : Customization & Negotiation
+gantt
+    title Palette Hub Project Roadmap
+    dateFormat  YYYY-MM-DD
+    axisFormat  %m-%Y
+    
+    section Phase 1: MVP
+    B2B Focus (Interior & Real Estate) :active, p1, 2026-01-01, 90d
+    Physical Crafts & Negotiation Logic :active, p2, after p1, 60d
+    
     section Phase 2: Expansion
-        B2C Launch : Individual Shoppers
-        Artisan Scaling : Regional Growth
-        Feedback Loop : Market Validation
+    B2C Launch (Individual Shoppers)   :after p2, 90d
+    Artisan Scaling & Regional Growth  :after p2, 120d
+    
     section Phase 3: Diversification
-        Digital Assets : 3D Models & Blueprints
-        Full Ecosystem : All-in-One Design Platform
+    Digital Assets (3D Models)         :2027-01-01, 150d
+    Full Ecosystem Integration         :after p3, 100d
 
 
 ## 3. Team Composition & Initial Roles
