@@ -65,3 +65,27 @@ To ensure long-term sustainability and scalability, **Artura** follows a strateg
 | **Raghad Nassef** | XX |
 | **Layan Aldosari** | XX |
 | **Banan Aleid** | XX |
+
+## 5. Technical Stack & Tools
+The team has selected a modern and scalable technical stack to ensure the performance and reliability of the Artura platform.
+
+### 🛠 Backend & Infrastructure 
+* **Language:** Python 3.x
+* **Framework:** Flask (RESTful API)
+* **Authentication:** JWT (JSON Web Tokens)
+* **Documentation:** Swagger 
+
+### 🗄 Persistence & Data 
+* **Database:** PostgreSQL (Relational Database)
+* **ORM:** SQLAlchemy (for efficient database interactions)
+* **Modeling:** Draw.io / MySQL Workbench (for ERD design)
+
+### 🎨 Frontend & Design
+* **Languages:** HTML5, CSS3, JavaScript
+* **Styling:** Tailwind CSS 
+* **Prototyping:** Figma
+
+### 🚀 Collaboration & DevOps
+* **Version Control:** Git & GitHub
+* **Project Management:** Notion / GitHub Projects
+* **Communication:** Slack / Zoom
