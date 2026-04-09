@@ -2,7 +2,7 @@
 
 ## Project Purpose
 
-The purpose of Artura is to create a specialized B2B platform that connects clients in the real estate and commercial sectors with creative professionals across various fields of art, including handicrafts, interior design, decoration, visual arts, and graphic design — all related to design, art, and space aesthetics.
+The purpose of Artura is to create a specialized B2C platform that connects clients in the real estate and commercial sectors with creative professionals across various fields of art, including handicrafts, interior design, decoration, visual arts, and graphic design — all related to design, art, and space aesthetics.
 
 These professionals, including interior designers, artists, craftsmen, and graphic designers, not only showcase their work but also offer both physical and digital products that can be used within residential and commercial spaces, many of which are customizable.
 
