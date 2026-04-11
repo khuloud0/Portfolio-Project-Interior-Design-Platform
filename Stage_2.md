@@ -1,92 +1,112 @@
-# Project Charter – Artura
+# Project Charter – Interior Design Platform
 
 ## Project Purpose
-
-The purpose of Artura is to create a specialized B2C platform that connects individual clients with creative professionals across various fields of art, including handicrafts, decoration, visual arts, and graphic design — all related to design, art, and space aesthetics.
-
-These professionals, including artists, craftsmen, and graphic designers, showcase their work and offer both physical and digital products that can be used within personal and commercial spaces, with customization available depending on the creator.
-
-Many individuals struggle to find unique, high-quality décor pieces or suitable creatives who can bring their vision to life. They often rely on multiple fragmented platforms, making the process time-consuming and inefficient.
-
-Artura aims to solve this problem by providing a centralized environment where users can easily discover creatives, explore their work and products, and request customized solutions when available. This enhances accessibility, simplifies the decision-making process, and improves the overall experience of designing and personalizing spaces.
-
+The purpose of this project is to develop a lightweight interior design platform that enables users to instantly generate personalized room design suggestions based on structured inputs such as room type, size, style, and color preferences
 ## Project Objectives
-
-1. Develop a platform where creative professionals can create profiles and showcase their work and products related to interior and commercial spaces.
-
-2. Enable clients to browse, select, and save their favorite creatives or products based on their style, expertise, and offerings.
-
-3. Provide a structured system that allows clients to request customized products or design solutions based on their specific needs.
+1. To develop a functional MVP that generates interior design suggestions based on at least 4 user input parameters by the end of the project timeline.
+2. To ensure users can receive 2–4 design recommendations in under 30 seconds without requiring initial login.
+3. To implement a scalable database containing at least 30 predefined interior design templates for accurate matching and filtering.
 
 ## Stakeholders
 
 ### Internal Stakeholders:
-- Team Members: Responsible for designing, developing, testing, and documenting the project.
-- Project Team Leads: Responsible for guiding technical progress in their assigned areas and ensuring coordination across the team.
+- Project Team (Students / Developers).
+They are the individuals responsible for building and developing the platform, including programming, design, and system implementation.
+
 
 ### External Stakeholders:
-- Tutors: Provide guidance, feedback, and evaluate project deliverables.
-- Clients: Individual users who use the platform to discover creative professionals, explore decorative products, and find personalized solutions for their personal or commercial spaces.
-- Creative Professionals: Artists, artisans, and graphic designers whose work is related to decor, visual aesthetics, and creative products for physical environments.
+External stakeholders include the current target users of the platform as well as potential future users as the system scales and evolves.
+
+### 1️⃣ Current Target Users (Homeowners / Renters / Students)
+These are the **primary users** of the platform who require quick, efficient, and simple interior design suggestions tailored to personal living spaces.
+* **Homeowners:** Looking to refresh their permanent living areas with minimal effort.
+* **Renters:** Seeking flexible and non-permanent design ideas for leased spaces.
+* **Students:** Focused on practical, budget-friendly, and functional room setups for study or dorm life.
+
+### 2️⃣ Future Users (Scalability Segment)
+These represent the **potential growth sectors** for future versions of the platform, extending the tool's capabilities to professional and larger-scale environments.
+* **Commercial Space Owners:** Small business owners, café managers, or boutique retailers.
+* **Offices:** Corporate teams looking to optimize workplace ergonomics and aesthetics.
+* **Large-scale Clients:** Interior design clients requiring coordination for expansive or multi-room environments.
+
+### Team role & Responsibilites:
+| Team Member | Role | Key Responsibilities |
+| :--- | :--- | :--- |
+| **Khuloud Alqarni** | Backend Lead | Backend development, API logic, and server-side functionality. |
+| **Raghad Nassef** | Frontend Lead | Building the website interface and implementing the frontend experience. |
+| **Layan Aldosari** | QA Lead | Testing, reviewing functionality, and ensuring quality and usability. |
+| **Banan Aleid** | Database Lead & Project Manager | Database design and schema structure. Leading planning, task allocation, and cross-team coordination to ensure MVP delivery. |
+
+### Description of the project’s scope
   
-## Team Roles
-
-- Khuloud Alqarni – Backend Lead: Responsible for backend development, API logic, and server-side functionality.
-- Raghad Nassef – Frontend Lead: Responsible for building the website interface and implementing the frontend experience.
-- Layan Aldosari – QA Lead: Responsible for testing, reviewing functionality, and ensuring quality and usability.
-- Banan Aleid – Database Lead: Responsible for database design, schema structure, and data organization.
-
-## Scope
-
-### In-Scope:
-- User registration and login for clients and creative professionals.
-- Creation of professional profiles for creatives to showcase their work and products.
-- Display of decorative products (physical and digital) related to interior and commercial spaces.
-- Browsing and searching for creatives and their work based on style and offerings.
-- Allow clients to favorite creatives and easily access their work later.
-- Submission of customization requests where clients describe their design or product needs.
-
-### Out-of-Scope:
-- Advanced customization of product browsing and interface layouts beyond simple list-based displays.
-- Advanced payment systems and financial integrations.
-- Real-time chat or complex messaging systems.
-- Full project management features.
-- Mobile application development.
-- Integration with manufacturing or production partners.
+| Feature Category | In-Scope (Included) | Out-of-Scope (Excluded) |
+| :--- | :--- | :--- |
+| **User Interaction** | • User input form (room type, size, style, color preference)<br>• Progressive authentication (save-to-signup flow)<br>• User dashboard for saved designs | • Room image upload or scanning<br>• Advanced personalization algorithms |
+| **Core Functionality** | • Template-based interior design suggestion system<br>• Display 2–4 design outputs per request<br>• Save Design functionality | • AI-generated interior design models<br>• 3D visualization or rendering |
+| **Data & Filters** | • Filtering system (by room type and style)<br>• SQLite database storing design templates | • Furniture marketplace integration<br>• Payment systems or subscriptions |
+| **System Design** | • Minimalist grid-based UI<br>• Modular Flask architecture | • Real-time collaborative design tools |
 
 ## Risks and Mitigation Strategies
 
-- Risk: Expanding the platform to include digital products may increase system complexity and development workload.
-  Mitigation: Focus on core MVP features first and postpone advanced .
-
-- Risk: Increased workload may lead to delays in project delivery.
-  Mitigation: Prioritize essential features, distribute tasks effectively, and follow a clear development timeline.
-
-- Risk: Difficulty in balancing website performance (functionality) with visual quality (design).
-  Mitigation: Adopt a simple and clean design approach while maintaining essential functionality, avoiding overcomplication.
-
-- Risk: Challenges in protecting the rights of both clients and creative professionals.
-  Mitigation: Clearly define usage guidelines and basic policies within the platform to ensure transparency.
-
-- Risk: Integration challenges between different components of the system (frontend, backend, database).
-  Mitigation: Develop and test components incrementally and ensure continuous coordination between team members.
+| Risk | Mitigation Strategy |
+| :--- | :--- |
+| **Limited design dataset** | Start with curated templates (30–50 designs) |
+| **Weak matching accuracy** | Use structured filters (room type, style) |
+| **Scope creep** | Strict adherence to MVP features |
+| **UI complexity** | Keep interface minimal and grid-based |
+| **Backend integration issues** | Modular Flask architecture |
+| **Low user engagement** | Add instant preview and simple UX flow |
 
 ## High-Level Project Plan
 
-- Stage 1: Idea Development (Weeks 1–2)
-  Milestone: Finalized project idea and completed Stage 1 report.
+## 🚀 Project Roadmap
 
-- Stage 2: Project Charter Development (Weeks 3–4)
-  Milestone: Completed Project Charter including objectives, scope, stakeholders, and risks.
+### Stage 1: Idea Development (Completed) ✅
+* Define project concept and problem statement.
+* Identify target users and initial features.
 
-- Stage 3: Technical Documentation (Weeks 5–6)
-  Milestone: Finalized system architecture, database design, and technical specifications.
+### Stage 2: Project Charter Development (Current Stage) 📍
+* Define objectives, scope, stakeholders, and risks.
+* Finalize project documentation.
 
-- Stage 4: MVP Development (Weeks 7–10)
-  Milestone: Developed a functional MVP including core features such as user profiles, product display, and customization requests.
+### Stage 3: Technical Documentation 📝
+* Design system architecture.
+* Create database schema (SQL).
+* Define Flask routes and system flow.
 
-- Stage 5: Project Closure (Weeks 11–12)
-  Milestone: Final presentation, project evaluation, and documentation of lessons learned.
+### Stage 4: MVP Development 🛠️
+* Build backend using Flask and Python.
+* Develop frontend.
+* Implement design suggestion system.
+* Integrate database with templates.
+* Add **Save Design** feature with progressive authentication.
 
+### Stage 5: Project Closure 🏁
+* Testing and bug fixing.
+* Final UI improvements.
+* Prepare final presentation and demo.
+* Submit documentation and project report.
 
+## 📌 Key Milestones / Deliverables
+
+* ✅ **Concept Defined:** Completed project idea and scope definition.
+* ✅ **Project Charter:** Approved Project Charter document.
+* ⏳ **Architecture Design:** Technical architecture and database design.
+* ⚪ **MVP Launch:** Functional system (
+* ⚪ **Final Handover:** Presentation and working demo.
+
+### 💡 Value Proposition
+The platform aims to streamline the interior design process by converting complex design decisions into a **simple, structured, and fast** digital experience. It enables users to instantly generate personalized interior design suggestions without requiring technical knowledge or professional expertise.
+
+### 🚀 Key Innovation
+* **Frictionless Experience:** No initial authentication required, providing immediate access to core tools.
+* **Real-time Generation:** Structured design suggestions based on precise user inputs (room type, size, style).
+* **Progressive Authentication:** Seamless user journey where account creation is deferred until the "Save Design" stage.
+
+### 🏆 Competitive Advantage
+* **Accessibility:** Simpler than traditional 3D tools that require advanced technical skills.
+* **Efficiency:** Faster than manual design platforms or traditional consultation services.
+* **Personalization:** More structured than inspiration-based apps that rely on unorganized visual browsing.
+
+---
   
