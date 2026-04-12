@@ -54,3 +54,28 @@ The Interior Design Platform MVP follows a simple **three-layer web architecture
 
 <img src="architecture.png" width="500">
 
+## Data Flow
+
+The following steps outline the data movement within the platform, from user input to the final result:
+
+1.  **User Input:** The user interacts with the **React frontend** by entering design preferences, such as room type, size, style, and color.
+2.  **Request:** The frontend sends an **HTTP request** containing these preferences to the **Flask backend**.
+3.  **Processing:** The backend validates the input and applies the filtering logic.
+4.  **Query:** The backend queries the **SQL database** to retrieve the most relevant design templates based on the user's criteria.
+5.  **Response:** The retrieved results are sent back to the frontend.
+6.  **Display:** The frontend renders the matching design suggestions, allowing the user to view and compare their options instantly.
+
+## External Services
+
+| Status | Details |
+| :--- | :--- |
+| **Current MVP** | The current MVP does not rely on external APIs, as it uses a predefined template-based system for generating design suggestions. |
+| **Future Scope** | Future versions may integrate external services such as AI-based design generation or third-party visualization tools to enhance personalization and visualization capabilities. |
+
+## Technical Justification
+
+The technology stack was strategically selected to prioritize speed, maintainability, and data integrity for the MVP:
+
+* **Python:** Selected for its simplicity, high readability, and robust support for rapid MVP development, allowing for faster iteration cycles.
+* **Flask:** Chosen as a lightweight micro-framework that enables quick implementation of RESTful APIs. Its minimalist and modular nature makes the system easier to scale and maintain without unnecessary overhead.
+* **SQL:** Utilized for its superior efficiency in handling relational data. This is essential for managing the structured relationships between room types, architectural styles, color palettes, and the corresponding design templates.
