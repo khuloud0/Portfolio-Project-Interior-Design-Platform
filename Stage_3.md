@@ -79,3 +79,110 @@ The technology stack was strategically selected to prioritize speed, maintainabi
 * **Python:** Selected for its simplicity, high readability, and robust support for rapid MVP development, allowing for faster iteration cycles.
 * **Flask:** Chosen as a lightweight micro-framework that enables quick implementation of RESTful APIs. Its minimalist and modular nature makes the system easier to scale and maintain without unnecessary overhead.
 * **SQL:** Utilized for its superior efficiency in handling relational data. This is essential for managing the structured relationships between room types, architectural styles, color palettes, and the corresponding design templates.
+
+### Define Components, Classes, and Database Design
+
+### 01. Frontend Components
+
+The frontend is composed of reusable UI components that support the main MVP flow, from entering user preferences to viewing and saving design suggestions.
+
+**Main Frontend Components**
+
+The frontend is built using **React**, following a modular component-based structure to ensure reusability and a clean Swiss-style minimalist interface.
+
+| Component | Description |
+| :--- | :--- |
+| **App** | The root component that manages the main application flow and overall state. |
+| **Navbar** | Displays the application title and navigation links. |
+| **DesignForm** | The core interface that collects user inputs (room type, size, style, and color). |
+| **InputField / SelectField** | Reusable UI elements for text inputs and dropdown selections. |
+| **ResultsList** | A container that displays the collection of generated design suggestions. |
+| **DesignCard** | A UI card representing a single design suggestion, including its image and details. |
+| **SaveButton** | Enables users to save a specific design to their profile. |
+| **LoginModal / SignupForm** | Triggered when an unauthenticated user attempts to save a design. |
+| **Dashboard** | A personalized view for authenticated users to manage their saved designs. |
+
+### 02. Backend Classes
+
+The backend is implemented using Flask and Python. The system is structured around core classes that represent users, design templates, and saved designs, while service logic handles filtering and suggestion generation. Python and Flask were selected in the project stack for backend development.
+
+**Main Backend Classes**
+
+| Class | Attributes | Methods |
+| :--- | :--- | :--- |
+| **User** | `id`, `name`, `email`, `password_hash` | `register()`, `login()`, `save_design()` |
+| **DesignTemplate** | `id`, `room_type`, `room_size`, `style`, `color`, `image_url`, `description` | `get_all()`, `filter_by_preferences()` |
+| **SavedDesign** | `id`, `user_id`, `design_id`, `saved_at` | `save()`, `get_user_saved_designs()` |
+| **RecommendationService** | (Internal helper logic) | `generate_suggestions()`, `match_templates()` |
+| **AuthService** | (Stateless) | `validate_user()`, `hash_password()`, `verify_password()` |
+
+### 03.  Database Design
+
+**Main Tables**
+
+ 👤 **Users Table**
+
+| Column | Type | Description |
+| :--- | :--- | :--- |
+| **id** | INT / PK | Unique user identifier |
+| **name** | VARCHAR | Full name of the user |
+| **email** | VARCHAR / UNIQUE | Primary contact and login email |
+| **password_hash** | VARCHAR | Securely encrypted password |
+
+ 🛋️ **Room Types Table**
+
+| Column | Type | Description |
+| :--- | :--- | :--- |
+| **id** | INT / PK | Unique room type identifier |
+| **name** | VARCHAR | Example: Bedroom, Living Room, Kitchen |
+
+ 🎨 **Styles Table**
+
+| Column | Type | Description |
+| :--- | :--- | :--- |
+| **id** | INT / PK | Unique style identifier |
+| **name** | VARCHAR | Example: Modern, Minimalist, Swiss |
+
+🖌️ **Colors Table**
+
+| Column | Type | Description |
+| :--- | :--- | :--- |
+| **id** | INT / PK | Unique color identifier |
+| **name** | VARCHAR | Example: White, Beige, Charcoal |
+
+ 📐 **Design Templates Table**
+
+| Column | Type | Description |
+| :--- | :--- | :--- |
+| **id** | INT / PK | Unique template identifier |
+| **room_type_id** | INT / FK | References `room_types.id` |
+| **style_id** | INT / FK | References `styles.id` |
+| **color_id** | INT / FK | References `colors.id` |
+| **room_size** | VARCHAR | Small / Medium / Large |
+| **image_url** | TEXT | Path or URL to the template image |
+| **description** | TEXT | Detailed design notes |
+
+💾 **Saved Designs Table**
+
+| Column | Type | Description |
+| :--- | :--- | :--- |
+| **id** | INT / PK | Unique saved design identifier |
+| **user_id** | INT / FK | References `users.id` |
+| **design_template_id** | INT / FK | References `design_templates.id` |
+| **saved_at** | TIMESTAMP | Date and time the design was saved |
+
+### 04. Relationships
+
+A design template belongs to one room type, one style, and one color category. A user can save many design templates, and each saved record links one user to one design template.
+
+**Relationship Summary**
+
+* **room_types (1) → (Many) design_templates:** Each room type can be associated with multiple design templates.
+* **styles (1) → (Many) design_templates:** Each design style can be applied to various templates.
+* **colors (1) → (Many) design_templates:** Each color scheme can be used across multiple design templates.
+* **users (1) → (Many) saved_designs:** A single user can save multiple designs to their profile.
+* **design_templates (1) → (Many) saved_designs:** A specific design template can be saved by many different users.
+
+### 05. ER Diagram
+
+<img src="ERdiagram.png" width="300">
