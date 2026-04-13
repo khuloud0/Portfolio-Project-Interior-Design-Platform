@@ -201,3 +201,34 @@ This sequence diagram illustrates how the system generates design suggestions ba
 Save Design - This sequence diagram illustrates how a user saves a design, including the progressive authentication flow.
 
  <img src="SaveDesign.png" width="600">
+
+ ### API Specifications
+
+ **External APIs**
+
+| Status | Details |
+| :--- | :--- |
+| **Current MVP** | Does not rely on external APIs; uses a predefined template-based system for generating design suggestions. |
+| **Future Scope** | Future versions may integrate external services such as **AI-based design generation** or **third-party visualization tools** to enhance personalization and visualization capabilities. |
+
+**Internal APIs**
+
+The following table defines the internal API endpoints used in the system.
+
+### 🚀 API Endpoints
+
+| Endpoint | Method | Description | Input | Output |
+| :--- | :--- | :--- | :--- | :--- |
+| `/generate-design` | **POST** | Generate design suggestions based on user input | `JSON: { room_type, size, style, color }` | `JSON: [{ id, room_type, style, color, image_url }]` |
+| `/login` | **POST** | Authenticate user | `JSON: { email, password }` | `JSON: { token, user_id }` |
+| `/signup` | **POST** | Register a new user | `JSON: { name, email, password }` | `JSON: { message, user_id }` |
+| `/save-design` | **POST** | Save a selected design | `JSON: { user_id, design_id }` | `JSON: { message: "Saved successfully" }` |
+| `/saved-designs` | **GET** | Retrieve user's saved designs | `Query Params: user_id` | `JSON: [{ id, design_template_id, saved_at }]` |
+
+**All endpoints follow RESTful design principles and return responses in JSON format**
+
+
+
+
+ 
+
