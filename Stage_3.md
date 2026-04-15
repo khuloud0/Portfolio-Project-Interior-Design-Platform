@@ -227,6 +227,60 @@ The following table defines the internal API endpoints used in the system.
 
 **All endpoints follow RESTful design principles and return responses in JSON format**
 
+### SCM & QA Strategies
+
+### A SCM & QA Strategies
+
+The project uses **Git** and **GitHub** for version control and collaboration. Development is carried out using **Visual Studio Code** as the primary development environment. A structured branching strategy is followed to ensure organized development and code stability.
+
+### Development & Version Control
+
+#### Branching Strategy
+* **main:** Contains stable, production-ready code.
+* **develop:** Serves as the primary integration branch for ongoing development.
+* **feature branches:** Dedicated branches created for specific tasks (e.g., `feature/design-form`, `feature/api-endpoints`).
+
+#### Workflow
+* Developers create a unique feature branch for every assigned task.
+* Changes are committed regularly using clear and descriptive commit messages.
+* **Pull Requests (PRs)** are opened to merge completed features into the `develop` branch.
+* Peer code reviews are conducted to ensure quality and consistency before merging.
+* Once the `develop` branch is verified as stable, it is merged into the `main` branch.
+
+#### Development Tools
+* **Visual Studio Code:** The primary IDE used for coding, linting, and debugging.
+* **Swagger:** Utilized for comprehensive API documentation and interactive testing.
+
+### Quality Assurance (QA)
+
+The project follows a combination of manual testing and API validation techniques to ensure system functionality, reliability, and correctness.
+
+### Testing & Deployment Strategy
+
+* **Manual Testing:**
+    * Validating the user input forms for responsiveness and accuracy.
+    * Verifying that design generation results match the selected criteria.
+    * Testing the "Save Design" functionality to ensure data persistence.
+    * Rigorous testing of the login, signup, and authentication flows.
+* **API Testing:**
+    * Utilizing **Swagger** to test all API endpoints interactively.
+    * Validating request and response formats (JSON) against expected schemas.
+    * Ensuring the backend returns the correct HTTP status codes for all operations.
+
+#### Test Scenarios
+* **Valid Input:** Ensures the system provides accurate design results based on user preferences.
+* **Invalid Input:** Confirms that the system handles errors gracefully with proper validation messages.
+* **Unauthenticated Actions:** Verifies that attempting to save a design without logging in correctly triggers the authentication modal.
+* **Authenticated User Flow:** Ensures logged-in users can successfully save designs and retrieve them via their dashboard.
+
+#### Deployment Plan
+* **Local Development:** The application is developed and tested locally using the **Flask** framework.
+* **Database Setup:** **SQL** is used during the initial phase for its simplicity and rapid setup capabilities.
+* **Future Deployment:** Subsequent versions are planned for deployment to a **cloud environment** (e.g.,AWS,..) for public access and scalability.
+
+
+
+
 
 
 
