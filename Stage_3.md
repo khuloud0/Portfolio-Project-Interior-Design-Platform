@@ -1,183 +1,575 @@
-# Stage 3: Technical Documentation
-**Project:** Interior Design & Contractor Marketplace Platform
+## Project Overview ##
 
-## Overview
-This platform bridges the gap between homeowners and credible interior designers, with an extended pipeline to connect designers with trusted contractors for whole design execution. The goal is to mitigate professional reliability within the interior design and contracting market by providing a verified, transparent, and seamless user journey from initial room request to physical project completion.
+This project introduces a platform that connects clients, interior designers, and execution service providers to transform interior design ideas into real-world implementation through a structured workflow.
+
+Instead of only generating design suggestions, the platform focuses on enabling execution by breaking down designs into actionable steps and connecting them with relevant service providers.
+
+## 1. Problem Statement
+
+### ✔ The Problem
+In the current landscape of digital and physical design, several pain points hinder the successful realization of projects:
+
+* **Fragmented Navigation:** Clients struggle to manage and coordinate between multiple service providers and vendors.
+* **Execution Gap:** There is a significant lack of knowledge on how to effectively translate a design concept into a finished product.
+* **Loss of Creative Oversight:** Designers often lose control and influence over the quality of the final output once the initial design is delivered.
+* **Unstructured Workflow:** The transition from design to execution is often fragmented, leading to delays and inconsistent results.
 
 ---
 
-## 1. User Stories & Prioritization (MoSCoW Method)
+## 2. Proposed Solution
 
-These user stories define the core functionality from the perspective of our three main user types: Homeowners, Designers, and Contractors.
+Our solution bridges the gap between creative vision and tangible results by transforming the design process into an integrated execution roadmap.
 
-| Priority | User Story |
+### Key Pillars of the Solution:
+* **Design-to-Action Transformation:** Automatically breaking down complex designs into clear, actionable execution steps.
+* **Integrated Provider Ecosystem:** Directly connecting each project step with verified service providers and exclusive offers.
+* **Expert Recommendations:** Providing curated designer suggestions for each phase to ensure the creative integrity of the project remains intact.
+* **Centralized Execution:** Moving from a fragmented process to a structured, all-in-one platform for seamless delivery.
+  
+## 3. User Types
+
+| User Type | Roles & Responsibilities |
 | :--- | :--- |
-| **Must Have** | **As a Homeowner**, I want to submit a detailed design request (room type, size, style preferences) so that designers understand my needs. |
-| | **As a Homeowner**, I want to browse verified designer profiles and select one based on their portfolio and credibility rating. |
-| | **As a Designer**, I want to receive requests and submit digital draft designs to the homeowner for review. |
-| | **As a Homeowner**, I want to pay securely for the final digital design once I approve the draft. |
-| **Should Have** | **As a Homeowner**, I want the option to upgrade my digital design to implementation so the designer manages the physical execution. |
-| | **As a Designer**, I want to search a directory of credible contractors to hire for the execution phase. |
-| | **As a Contractor**, I want to maintain a profile with my credentials and past work to attract interior designers on the platform. |
-| **Could Have** | **As a user (all)**, I want an in-app messaging system so that I can communicate seamlessly without leaving the platform. |
-| **Won’t Have** | **As a Homeowner**, I want an AI to automatically generate my design. *(Out of scope: The core value is human credibility and connection).* |
+| **Client** | • Submits comprehensive design requests<br>• Evaluates and selects service providers<br>• Monitors real-time execution progress |
+| **Designer** | • Analyzes client requirements and constraints<br>• Develops the strategic execution plan<br>• Deconstructs projects into actionable steps<br>• Recommends the most suitable service offers |
+| **Provider** | • Receives specific execution task assignments<br>• Submits competitive service offers<br>• Performs and delivers the actual technical work |
 
----
+## 4. Core Features
 
-## 2. Mockups / Wireframes
+* **1. Design Request**
+    * Allows clients to input detailed room specifications, project goals, and budget constraints.
+
+* **2. Execution Plan Creation (Key Feature)**
+    * Defines the spatial layout.
+    * Deconstructs the design into specific, manageable phases (e.g., Painting, Carpentry, Lighting).
+
+* **3. Offer Collection**
+    * Enables service providers to view execution steps and submit competitive offers for each phase.
+
+* **4. Designer Recommendation**
+    * Features a review layer where the designer evaluates and tags the best-fit offers to guide the client.
+
+* **5. Final Package (Core Screen)**
+    * A consolidated view providing:
+        * The full execution roadmap.
+        * All received offers.
+        * The designer's expert recommendations.
+
+* **6. Selection System**
+    * Enables the client to choose a specific provider for every task.
+    * **Logic:** The "Confirm" action is only activated once a provider has been assigned to all required steps.
+
+* **7. Project Overview Dashboard**
+    * A central hub displaying all execution steps, assigned providers, and the real-time status of each component.
+
+* **8. Execution Start**
+    * Facilitates direct contact with selected providers to initiate the physical work.
+
+* **9. Progress Tracking**
+    * Real-time tracking of the project lifecycle using clear status indicators:
+        * **Pending**
+        * **In Progress**
+        * **Completed**
+
+## 5 User Stories (MoSCoW Method)
+
+| Category | User Role | User Story |
+| :--- | :--- | :--- |
+| **Must Have** |  Homeowner | As a homeowner, I want to submit a design request so that I can start my project. |
+| |  Homeowner | As a homeowner, I want to receive a clear execution plan (steps) so that I understand how to implement my design. |
+| |  Homeowner | As a homeowner, I want to view multiple offers for each step so that I can compare options. |
+| |  Homeowner | As a homeowner, I want to select a provider for each step so that I can proceed with execution. |
+| |  Homeowner | As a homeowner, I want to track my project and the status of each step. |
+| |  Designer | As a designer, I want to convert the request into an execution plan with steps so that the design becomes actionable. |
+| |  Designer | As a designer, I want to review and recommend the best offers so that I can guide the client’s decision. |
+| |  Provider | As a provider, I want to receive relevant execution steps and submit offers so that I can get work opportunities. |
+| **Should Have** |  Designer | As a designer, I want to add notes to each step so that execution matches the design. |
+| |  Homeowner | As a homeowner, I want to see which offer is recommended so that I can make a better decision. |
+| **Could Have** |  Homeowner | As a homeowner, I want to access provider contact information so that I can start execution quickly. |
+| |  Homeowner | As a homeowner, I want to track the progress of each step. |
+| **Won't Have (MVP)** | All Users | As a user, I want in-app chat (future feature). |
+| | **All Users** | As a user, I want in-app payment (future scope). |
+| |  Homeowner | As a homeowner, I want AI-generated designs. |
+
+## 6. Mockups / Wireframes
 
 The following wireframes outline the main user interface screens of the MVP, focusing on the multi-sided marketplace flow.
 
-| | | |
-|:---:|:---:|:---:|
-| **Home / Landing Page**<br>Value prop & search bar | **Designer Directory**<br>List of credible designers | **Designer Profile**<br>Portfolio, reviews, "Hire Me" |
-| **Project Request Form**<br>Room, size, budget, style | **Homeowner Dashboard**<br>Track drafts & project status | **Designer Dashboard**<br>Manage requests & active jobs |
-| **Draft Review & Payment**<br>Approve design & Checkout | **Contractor Directory**<br>For designers executing builds | **Contractor Profile**<br>Licenses, past projects, ratings |
+## 7. Architectural Layers
+
+* **1. Presentation Layer (Frontend)**
+    * Built with **React** to provide a responsive and user-friendly interface.
+    * Enables users to:
+        * Submit design requests.
+        * View structured execution plans.
+        * Compare multiple service offers.
+        * Track real-time project progress.
+
+* **2. Logic Layer (Backend)**
+    * Powered by **Flask (Python)**.
+    * Handles core business logic, including:
+        * Generating and managing execution plans.
+        * Processing execution steps (e.g., Painting, Lighting).
+        * Collecting and organizing offers from providers.
+        * Supporting designer-led recommendations.
+
+* **3. Data Layer (Database)**
+    * Uses **PostgreSQL** for robust, structured data storage.
+    * Stores and manages:
+        * **Users:** Profiles for homeowners, designers, and providers.
+        * **Design Requests:** Detailed project inputs.
+        * **Execution Plans & Steps:** The actionable roadmap.
+        * **Offers:** Submissions from service providers.
+
+**How the System Works**
+
+```mermaid
+flowchart TD
+    H[Homeowner] -->|Submit Design Request| FE[Frontend / React]
+    FE -->|Send Request| BE[Backend / Flask]
+    BE -->|Store Request| DB[(PostgreSQL Database)]
+
+    D[Designer] -->|View Requests| FE
+    D -->|Create Execution Plan + Steps| FE
+    FE -->|Save Plan + Published Steps| BE
+    BE -->|Store Plan + Steps| DB
+
+    P[Provider] -->|Browse Open Steps by Service Type| FE
+    FE -->|Request Open Steps| BE
+    BE -->|Read Published Steps| DB
+    BE -->|Return Matching Steps| FE
+
+    P -->|Submit Offers| FE
+    FE -->|Save Offers| BE
+    BE -->|Store Offers| DB
+
+    D -->|Review Offers + Recommend Best| FE
+    FE -->|Save Recommendation| BE
+    BE -->|Update Offers| DB
+
+    H -->|View Final Package| FE
+    FE -->|Get Plan + Offers + Recommendations| BE
+    BE -->|Read Final Package Data| DB
+    BE -->|Return Final Package| FE
+
+    H -->|Select Provider for Each Step| FE
+    FE -->|Confirm Full Package| BE
+    BE -->|Store Selected Offers + Create Project Overview| DB
+
+    H -->|Track Project Progress| FE
+```
+
+## 8. Data Flow
+
+The following steps outline the data movement within the platform, from the initial request to execution:
+
+1. **Request Submission**
+    * The homeowner submits a design request through a structured form in the **React** frontend, capturing key information such as space details, user needs, design preferences, and budget.
+2. **Request Handling**
+    * The frontend sends an HTTP request to the **Flask** backend, where the request is validated and stored in the **PostgreSQL** database.
+3. **Execution Plan Creation**
+    * The designer retrieves the request and creates a comprehensive execution plan, breaking it down into structured, actionable steps.
+4. **Step Publication**
+    * The execution steps are published and become visible to relevant service providers based on their specific service categories.
+5. **Offer Submission**
+    * Service providers browse available steps and submit formal offers, including pricing and estimated duration.
+6. **Recommendation**
+    * The designer reviews the submitted offers and tags the most suitable options with expert recommendations.
+7. **Final Package Delivery**
+    * The backend compiles the execution plan, all offers, and designer recommendations into a single data package for the frontend.
+8. **Client Selection**
+    * The homeowner selects a preferred provider for each step and confirms the full package to lock in the plan.
+9. **Execution Tracking**
+    * The system generates a project overview, allowing the homeowner to monitor the real-time progress and status of each individual step.
+
+##  External Services
+
+###  Current MVP
+The current Minimum Viable Product (MVP) is designed to be self-contained for maximum stability:
+* **Internal Logic:** All core functionality is handled internally, including request management, execution planning, and offer collection.
+* **No External Dependencies:** Does not rely on third-party APIs at this stage to ensure a streamlined core experience.
 
 ---
 
-## 3. Design System Architecture
+###  Future Scope
+As the platform scales, we plan to integrate several external services to enhance the user experience:
 
-### Overview
-The MVP utilizes a **three-layer web architecture** (Frontend, Backend, Database) to support the complex relational data of a three-sided marketplace (Homeowner, Designer, Contractor).
+* **Payment Gateway Integration:** To facilitate secure in-app transactions between homeowners and service providers.
+* **Real-time Communication Tools:** Integration of chat or notification APIs for direct collaboration.
+* **AI-Assisted Design Support:** Leveraging AI models to help designers and homeowners generate initial concepts or automate step breakdowns.
+* **Location-Based Services (Google Maps API):**
+    * Assisting users in finding nearby physical stores.
+    * Locating providers and suppliers that offer the specific items required for the execution plan.
 
-### Main Components
+## 9. Technical Justification
 
-| Component | Technology | Responsibility |
-| :--- | :--- | :--- |
-| **Frontend** | **React** | Handles dynamic UI for distinct user dashboards (Homeowner, Designer, Contractor) and project forms. |
-| **Backend** | **Flask (Python)** | Manages business logic: user verification, matching algorithms, payment routing, and project state management. |
-| **Database** | **PostgreSQL (SQL)** | Stores highly relational data including user profiles, project details, transactions, and credibility reviews. |
 
-### Data Flow
-1. **Request Phase:** Homeowner inputs project specs via React frontend. Data is sent to Flask backend.
-2. **Matching Phase:** Homeowner selects a designer. Backend creates a "Project Sandbox" linking the two users in the SQL database.
-3. **Draft & Payment Phase:** Designer uploads digital drafts via frontend. Homeowner approves and pays. Backend processes payment (via Stripe API) and unlocks the final files.
-4. **Execution Phase (Optional):** If the Homeowner opts for  application, the backend updates the project status. The Designer queries the database for verified Contractors, initiating a secondary connection.
+**Python**
+
+Python was chosen for its simplicity and readability, allowing rapid development and easy implementation of business logic related to execution plans, steps, and offers.
+
+**Flask**
+
+Flask was selected as a lightweight framework to build RESTful APIs that handle:
+
+* Design request processing
+* Execution plan creation
+* Step management
+* Offer submission and retrieval
+
+**PostgreSQL**
+
+PostgreSQL was chosen to manage structured relational data, supporting complex relationships between:
+
+* Users (homeowners, designers, providers)
+* Design requests
+* Execution plans
+* Execution steps
+* Offers
+
+## 01. Frontend Components 
+
+The frontend is composed of reusable UI components that support the core execution workflow, from submitting a request to selecting providers and tracking progress.
 
 ---
 
-## 4. Define Components, Classes, and Database Design
+### Main Frontend Components
+The frontend is built using **React**, following a modular component-based structure to ensure reusability and a clean, user-friendly interface.
 
-### 01. Frontend Components (React)
 | Component | Description |
 | :--- | :--- |
-| `UserRouter` | Directs users to the correct dashboard based on role (Homeowner vs. Designer). |
-| `ProfileCard` | Reusable UI displaying a Designer or Contractor's rating, name, and specialty. |
-| `ProjectRequestForm` | Multi-step form collecting room details, dimensions, and style preferences. |
-| `DraftViewer` | Interface for homeowners to view, comment on, and approve uploaded designs. |
-| `PaymentGateway` | Secure checkout component for processing digital design payments. |
+| **App** | The root component that manages the main application flow and global state. |
+| **Navbar** | Displays the application name and navigation between main sections. |
+| **RequestForm** | The core interface where homeowners submit a structured design request, including space details, preferences, and budget. |
+| **ExecutionPlanView** | Displays the execution plan created by the designer, including all steps. |
+| **StepCard** | Represents a single execution step (e.g., Painting, Lighting), showing its details. |
+| **OffersList** | Displays all offers submitted by providers for a specific step. |
+| **OfferCard** | Represents a single offer, including price, duration, and provider details. |
+| **RecommendationBadge** | Highlights the designer’s recommended offer. |
+| **SelectionPanel** | Allows the homeowner to select one provider for each step and confirm the full package. |
+| **ProjectOverview** | Displays all selected providers, steps, and current execution status. |
+| **ContactProviderButton** | Allows the user to access provider contact information (e.g., call or WhatsApp). |
 
-### 02. Backend Classes (Flask/Python)
+## 02. Backend Classes 
+
+The backend is implemented using **Flask** and **Python**. The system is structured around core classes that represent the execution workflow, including requests, execution plans, steps, and offers.
+
+---
+
+### Main Backend Classes
+
 | Class | Attributes | Methods |
 | :--- | :--- | :--- |
-| **User** (Base) | `id`, `role`, `name`, `email`, `is_verified` | `login()`, `update_profile()` |
-| **Designer** | Inherits User + `portfolio_url`, `rating` | `submit_draft()`, `search_contractors()` |
-| **Project** | `id`, `homeowner_id`, `designer_id`, `status` | `update_status()`, `upgrade_to_execution()` |
-| **Transaction** | `id`, `project_id`, `amount`, `status` | `process_payment()`, `issue_payout()` |
+| **User** | `id`, `name`, `email`, `password_hash`, `role` (homeowner / designer / provider) | `register()`, `login()` |
+| **DesignRequest** | `id`, `user_id`, `space_details`, `preferences`, `budget`, `status` | `create_request()`, `get_request()` |
+| **ExecutionPlan** | `id`, `request_id`, `designer_id` | `create_plan()`, `get_plan()` |
+| **ExecutionStep** | `id`, `plan_id`, `title`, `description`, `service_type`, `status` | `create_step()`, `publish_step()`, `get_steps()` |
+| **Offer** | `id`, `step_id`, `provider_id`, `price`, `duration`, `status` | `submit_offer()`, `get_offers()` |
+| **RecommendationService** | (Internal logic) | `recommend_best_offer()` |
+| **Project** | `id`, `request_id`, `status` | `create_project()`, `track_progress()` |
+| **AuthService** | (Stateless) | `validate_user()`, `hash_password()`, `verify_password()` |
 
-### 03. Database Design (SQL)
+## 03  Database Design
 
-**👥 Users Table** (Handles all 3 roles)
-| Column | Type | Description |
-| :--- | :--- | :--- |
-| **id** | INT / PK | Unique identifier |
-| **role** | ENUM | 'Homeowner', 'Designer', 'Contractor' |
-| **credibility_score** | DECIMAL | Aggregated rating (crucial for platform value) |
+### Main Table :
 
-**📁 Projects Table**
-| Column | Type | Description |
-| :--- | :--- | :--- |
-| **id** | INT / PK | Unique project identifier |
-| **homeowner_id**| INT / FK | References Users.id |
-| **designer_id** | INT / FK | References Users.id |
-| **contractor_id**| INT / FK | References Users.id (Nullable until hired) |
-| **phase** | ENUM | 'Drafting', 'Digital_Complete', 'Physical_Build' |
+The system database is structured into the following main tables:
 
-**💬 Reviews Table**
-| Column | Type | Description |
-| :--- | :--- | :--- |
-| **reviewer_id** | INT / FK | Who wrote it |
-| **reviewee_id** | INT / FK | Who received it |
-| **rating** | INT | 1-5 scale (builds the credibility metric) |
+* **users**
+* **provider_profiles**
+* **design_requests**
+* **execution_plans**
+* **execution_steps**
+* **offers**
+* **selected_offers**
+* **projects**
 
-### 04. Relationships
-* **Users (Homeowner) (1) → (Many) Projects:** A homeowner can request multiple rooms/projects.
-* **Users (Designer) (1) → (Many) Projects:** A designer can work on multiple projects simultaneously.
-* **Users (Contractor) (1) → (Many) Projects:** Contractors can be assigned to multiple execution phases.
-* **Projects (1) → (Many) Transactions:** A project may have multiple payments (e.g., Digital Draft fee, Physical Build milestones).
+04. Relationships (Updated)
+
+The database is structured to reflect the execution workflow, where each entity is connected to support the full project lifecycle from request to execution.
 
 ---
 
-## 5. Sequence Diagrams (High-Level Overview)
+Relationship Summary
 
-*(Note: Replace these placeholders with actual image links to your generated sequence diagrams in your repository).*
-
-**Sequence 1: Digital Design Flow**
-`![Digital Design Flow Diagram](assets/digital_design_flow.png)`
-
-1. Homeowner -> Platform: Submit request & select Designer.
-2. Platform -> Designer: Notify of new project.
-3. Designer -> Platform: Upload draft design.
-4. Platform -> Homeowner: Notify draft is ready.
-5. Homeowner -> Platform: Approve & Pay.
-6. Platform -> Designer: Release funds.
-
-**Sequence 2: Execution Flow**
-`![Execution Diagram](assets/execution.png)`
-
-1. Homeowner -> Platform: Select "Proceed to execution".
-2. Platform -> Designer: Notify of project phase upgrade.
-3. Designer -> Platform: Search Contractor directory.
-4. Platform -> Designer: Return credible contractors.
-5. Designer -> Contractor: Send execution request.
+* **users (1) → (Many) design_requests**
+    A homeowner can submit multiple design requests.
 
 ---
 
-## 6. API Specifications
+* **design_requests (1) → (1) execution_plans**
+    Each request is assigned one execution plan created by a designer.
 
-### External APIs
-| Service | Purpose |
-| :--- | :--- |
-| **Stripe API** | Payment processing. To handle the homeowner's payment and route payouts to the interior designer. |
-| **AWS S3 / Cloudinary** | Cloud storage for housing high-resolution portfolio images and project draft files. |
+---
 
-### Internal APIs
-| Endpoint | Method | Description | Input | Output |
+* **users (designer) (1) → (Many) execution_plans**
+    A designer can create multiple execution plans.
+
+---
+
+* **execution_plans (1) → (Many) execution_steps**
+    Each execution plan consists of multiple steps.
+
+---
+
+* **execution_steps (1) → (Many) offers**
+    Each step can receive multiple offers from providers.
+
+---
+
+* **users (provider) (1) → (Many) offers**
+    A provider can submit multiple offers for different steps.
+
+---
+
+* **execution_steps (1) → (1) selected_offers**
+    Each step will have one selected offer chosen by the homeowner.
+
+---
+
+* **design_requests (1) → (1) projects**
+    Once the homeowner confirms all selections, a project is created.
+
+## ER Diagram
+
+```mermaid
+erDiagram
+    USERS {
+        int id PK
+        string name
+        string email
+        string password_hash
+        string role
+        datetime created_at
+    }
+
+    PROVIDER_PROFILES {
+        int id PK
+        int user_id FK
+        string service_type
+        string city
+        string description
+        string portfolio_url
+        string phone_number
+    }
+
+    DESIGN_REQUESTS {
+        int id PK
+        int homeowner_id FK
+        text space_details
+        text user_needs
+        text design_preferences
+        int budget
+        string status
+        datetime created_at
+    }
+
+    EXECUTION_PLANS {
+        int id PK
+        int request_id FK
+        int designer_id FK
+        text layout_description
+        text designer_notes
+        datetime created_at
+    }
+
+    EXECUTION_STEPS {
+        int id PK
+        int plan_id FK
+        string title
+        text description
+        string service_type
+        string status
+    }
+
+    OFFERS {
+        int id PK
+        int step_id FK
+        int provider_id FK
+        int price
+        string duration
+        text notes
+        boolean is_recommended
+        string status
+        datetime created_at
+    }
+
+    SELECTED_OFFERS {
+        int id PK
+        int step_id FK
+        int offer_id FK
+        int homeowner_id FK
+        datetime selected_at
+    }
+
+    PROJECTS {
+        int id PK
+        int request_id FK
+        int homeowner_id FK
+        string status
+        datetime created_at
+    }
+
+    USERS ||--o{ DESIGN_REQUESTS : submits
+    USERS ||--o{ EXECUTION_PLANS : creates
+    USERS ||--o{ PROVIDER_PROFILES : has
+    DESIGN_REQUESTS ||--|| EXECUTION_PLANS : has
+    EXECUTION_PLANS ||--o{ EXECUTION_STEPS : includes
+    EXECUTION_STEPS ||--o{ OFFERS : receives
+    USERS ||--o{ OFFERS : submits
+    EXECUTION_STEPS ||--o| SELECTED_OFFERS : has
+    OFFERS ||--o| SELECTED_OFFERS : selected_as
+    USERS ||--o{ SELECTED_OFFERS : selects
+    DESIGN_REQUESTS ||--o| PROJECTS : becomes
+```
+## 10. Design Rationale
+
+The database structure and system logic are built to support:
+
+* Structured design requests from homeowners
+* Execution plan creation by designers
+* Step-based task organization
+* Offer submission from service providers
+* Decision-making through comparison and recommendations
+* Project tracking after confirmation
+
+**Sequence Diagram 1 (Request → Plan → Offers)**
+
+```mermaid
+sequenceDiagram
+    participant H as Homeowner
+    participant FE as Frontend
+    participant BE as Backend
+    participant DB as Database
+    participant D as Designer
+    participant P as Providers
+
+    H->>FE: Submit Design Request
+    FE->>BE: Send request
+    BE->>DB: Store request
+
+    BE->>D: Assign request
+    D->>BE: Create execution plan + steps
+    BE->>DB: Save plan + steps
+
+    P->>BE: Browse open steps
+    P->>BE: Submit offers
+    BE->>DB: Store offers
+
+    D->>BE: Recommend best offers
+    BE->>DB: Update recommendations
+
+    BE->>FE: Send final package
+    FE->>H: Display plan + offers
+```
+----
+
+**Sequence Diagram 2 (Selection → Project → Execution)**
+
+```mermaid
+sequenceDiagram
+    participant H as Homeowner
+    participant FE as Frontend
+    participant BE as Backend
+    participant DB as Database
+
+    H->>FE: Select providers for each step
+    FE->>BE: Send selections
+    BE->>DB: Store selected offers
+
+    H->>FE: Confirm full package
+    FE->>BE: Confirm request
+
+    BE->>DB: Create project
+    BE->>FE: Return project overview
+
+    H->>FE: Track progress
+```
+
+## 11. API Specifications 
+
+**External APIs**
+
+The current MVP does not rely on external APIs.
+All functionality is handled internally, including request management, execution planning, and offer collection.
+
+**Internal APIs**
+
+The following endpoints define the core system functionality supporting the execution workflow.
+
+API Endpoints
+
+| Endpoint | Method | Description | Main Input | Main Output |
 | :--- | :--- | :--- | :--- | :--- |
-| `/api/designers` | **GET** | Fetch credible designers | `Filters (style, rating)`| `JSON: [{id, name, rating, portfolio}]` |
-| `/api/projects` | **POST** | Create a new design request | `JSON: {room, size, designer_id}` | `JSON: {project_id, status}` |
-| `/api/drafts` | **POST** | Designer uploads a draft | `File, project_id` | `JSON: {draft_url, timestamp}` |
-| `/api/pay` | **POST** | Process digital design payment | `JSON: {project_id, amount}` | `JSON: {transaction_id, status}` |
-| `/api/contractors`| **GET** | Designer queries contractors| `Filters (location, rating)`| `JSON: [{id, name, rating, license}]` |
+| /requests | POST | Create design request | space details, needs, budget | request_id |
+| /plans | POST | Create execution plan | request_id, layout, notes | plan_id |
+| /steps | POST | Add execution step | plan_id, service_type | step_id |
+| /offers | POST | Submit provider offer | step_id, price, duration | offer_id |
+| /select-offer | POST | Select provider offer | step_id, offer_id | confirmation |
+| /projects/{id} | GET | Track project | project_id | project status |
 
----
-
-## 7. SCM & QA Strategies
+ 
+ ## 12. SCM & QA Strategies
+The project uses Git and GitHub for version control and collaboration. Development is carried out using Visual Studio Code as the primary development environment. A structured branching strategy is followed to ensure organized development and code stability.
 
 ### Development & Version Control
-* **Repository:** GitHub.
-* **Branching Strategy:** Feature-branch workflow.
-  * `main`: Production-ready, stable marketplace.
-  * `develop`: Integration branch.
-  * `feature/*`: Specific tasks (e.g., `feature/payment-gateway`).
-* **Tools:** Visual Studio Code, Postman (for API testing).
 
-### Quality Assurance (QA)
-Testing will heavily focus on user-role permissions and transactional integrity.
+#### Branching Strategy
+* **main:** Contains stable, production-ready code.
+* **develop:** Serves as the primary integration branch for ongoing development.
+* **feature branches:** Dedicated branches created for specific tasks (e.g., feature/design-form, feature/api-endpoints).
 
-* **Manual Testing Scenarios:**
-  * Verify a Homeowner cannot access the Contractor Search (only Designers should see this in the current flow).
-  * Validate that final high-res designs are locked until Stripe confirms payment success.
-* **Automated API Testing:**
-  * Ensuring the matching logic returns *only* designers/contractors above a certain credibility threshold.
-* **Security Testing:** Validate authentication tokens so users can only access their own private project data and drafts.
+#### Workflow
+* Developers create a unique feature branch for every assigned task.
+* Changes are committed regularly using clear and descriptive commit messages.
+* Pull Requests (PRs) are opened to merge completed features into the develop branch.
+* Peer code reviews are conducted to ensure quality and consistency before merging.
+* Once the develop branch is verified as stable, it is merged into the main branch.
 
----
+#### Development Tools
+* **Visual Studio Code:** The primary IDE used for coding, linting, and debugging.
+* **Swagger:** Utilized for comprehensive API documentation and interactive testing.
 
-## 8. Technical Justification
+## Quality Assurance (QA) Testing Strategy
 
-* **React (Frontend):** A component-based UI is essential for a marketplace. We can reuse components like `ProfileCard` and `ReviewStars` across the Designer and Contractor directories, drastically speeding up development time.
-* **Flask (Backend):** Python's lightweight nature allows us to build and iterate on the matching and payment-routing logic rapidly without the boilerplate of larger frameworks.
-* **PostgreSQL (Database):** A relational database is non-negotiable for this idea. The complex linkages between Homeowners, Designers, Contractors, Projects, and Payments require strict ACID compliance and foreign-key constraints to ensure no data is orphaned (e.g., a payment not linked to a specific design).
-* **Stripe Integration:** Processing payments natively is a massive legal and security risk. Offloading this to Stripe ensures PCI compliance and handles complex multi-party payouts.
+**Manual Testing**
+
+* Validating the design request form to ensure accurate input handling
+* Verifying execution plan creation and step structure
+* Testing offer submission and selection flow
+* Ensuring the full workflow from request to project confirmation works correctly
+* Testing authentication flows (login / signup)
+
+
+**API Testing**
+
+* Using Swagger to test all API endpoints
+* Validating request and response formats (JSON)
+* Ensuring correct HTTP status codes are returned
+* Testing endpoints for requests, plans, steps, offers, and projects
+
+
+**Test Scenarios**
+
+* **Valid Input**:
+    Ensures the system correctly processes requests, plans, and offers
+* **Invalid Input**:
+    Verifies proper error handling and validation messages
+* **Offer Selection Flow**:
+    Ensures users can select providers for each step correctly
+* **Project Confirmation Flow**:
+    Verifies that a project is created after confirming selections
+* **Authentication Flow**:
+    Ensures only authenticated users can perform protected actions
+
+ **Deployment Plan**
+
+* **Local Development**:
+    The system is developed and tested locally using Flask
+* **Database Setup**:
+    PostgreSQL is used to manage relational data
+* **Future Deployment**:
+    The system can be deployed to a cloud environment (e.g., AWS) for scalability and public access
+
+
+
